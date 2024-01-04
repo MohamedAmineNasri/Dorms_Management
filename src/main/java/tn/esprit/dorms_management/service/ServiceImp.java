@@ -99,6 +99,17 @@ public class ServiceImp implements IService{
         blocRepository.deleteById(idBloc);
     }
 
+    @Override
+    public Bloc affecterChambresABloc(List<Long> numChambre, long idBloc) {
+        Bloc bloc = blocRepository.findById(idBloc).orElse(null);
+        List<Chambre>chambres = chambreRepository.findChambresByNumeroChambreIn(numChambre);
+        for (Chambre chambre:chambres) {
+            chambre.setBloc(bloc);
+            blocRepository.save(bloc);
+        }
+        return bloc;
+    }
+
 
     //End Bloc
 

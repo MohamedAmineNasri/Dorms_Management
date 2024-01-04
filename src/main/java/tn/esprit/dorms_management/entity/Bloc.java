@@ -1,5 +1,6 @@
 package tn.esprit.dorms_management.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,5 +25,6 @@ public class Bloc implements Serializable {
     private Foyer foyer;
 
     @OneToMany(mappedBy = "bloc")
+    @JsonIgnore
     private List<Chambre> chambreList;
 }

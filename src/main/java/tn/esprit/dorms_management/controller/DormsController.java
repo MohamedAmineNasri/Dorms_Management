@@ -94,6 +94,11 @@ public class DormsController {
     public Bloc updatBloc(@RequestBody Bloc bloc){
         return serviceImp.updateBloc(bloc);
     }
+
+    @PutMapping("affecterChambresABloc/{idBloc}")
+    public Bloc affecterChambresABloc(@RequestBody List<Long> numChambre,@PathVariable long idBloc) {
+        return serviceImp.affecterChambresABloc(numChambre,idBloc);
+    }
     //Bloc End
 
     //Start Universite
@@ -155,6 +160,7 @@ public class DormsController {
     public Chambre updatChambre(@RequestBody Chambre chambre){
         return serviceImp.updateChambre(chambre);
     }
+
     // End Chambre
 
     //Start Reservation

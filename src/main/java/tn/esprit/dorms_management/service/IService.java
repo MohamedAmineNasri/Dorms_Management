@@ -16,6 +16,7 @@ public interface IService {
     Foyer retrieveFoyer (long idFoyer);
 
     void removeFoyer (long idFoyer);
+    public Foyer ajouterFoyerEtAffecterAUniversite (Foyer foyer, long idUniversite) ;
     // End FOyer
 
     //Start Etudiant
@@ -40,6 +41,8 @@ public interface IService {
     Bloc retrieveBloc (long idBloc);
 
     void removeBloc (long idBloc);
+
+    public Bloc affecterChambresABloc(List<Long> numChambre, long idBloc) ;
     //End Bloc
 
     //Start Universite
