@@ -43,6 +43,15 @@ public class ServiceImp implements IService{
         foyerRepository.deleteById(idFoyer);
     }
 
+    @Override
+    public Foyer ajouterFoyerEtAffecterAUniversite(Foyer foyer, long idUniversite) {
+        Universite universite = universiteRepository.findById(idUniversite).get();
+        Foyer foyer1 = foyerRepository.save(foyer);
+        universite.setFoyer(foyer1);
+        universiteRepository.save(universite);
+        return foyer1;
+    }
+
     //    Foyer End
 
     //Start Etudiant

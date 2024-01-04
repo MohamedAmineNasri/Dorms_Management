@@ -36,6 +36,12 @@ public class DormsController {
     public Foyer updatingFoyer(@RequestBody Foyer foyer){
         return serviceImp.updateFoyer(foyer);
     }
+
+    @PostMapping("ajouterFoyerEtAffecterAUniversite/{idUniversite}")
+    public Foyer ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer,
+                                                   @PathVariable("idUniversite") long idUniversite) {
+        return  serviceImp.ajouterFoyerEtAffecterAUniversite(foyer,idUniversite);
+    }
     //End Foyer
 
     //Etudiant Start
