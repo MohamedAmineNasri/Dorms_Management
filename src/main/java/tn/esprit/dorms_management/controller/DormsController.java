@@ -119,6 +119,17 @@ public class DormsController {
     public Universite updatUniversite(@RequestBody Universite universite){
         return serviceImp.updateUniversite(universite);
     }
+
+    @PutMapping("affecter-foyer-universite/{idFoyer}")
+    public Universite affecterFoyerAUniversite(@RequestParam ("nomUniversite") String nomUniversite ,
+                                               @PathVariable long idFoyer){
+            return serviceImp.affecterFoyerAUniversite(idFoyer,nomUniversite);
+    }
+    @PutMapping("desaffecterFoyerAUniversite/{idUniversite}")
+    public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
+        return serviceImp.desaffecterFoyerAUniversite(idUniversite);
+    }
+
     //End Universite
 
     // Start Chambre

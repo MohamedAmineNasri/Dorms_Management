@@ -50,6 +50,9 @@ public interface IService {
     Universite updateUniversite (Universite u);
 
     Universite retrieveUniversite (long idUniversite);
+
+    public Universite affecterFoyerAUniversite (long idFoyer, String nomUniversite);
+    public Universite desaffecterFoyerAUniversite (long idUniversite);
     //End Universite
 
     // Start Chambre

@@ -123,6 +123,20 @@ public class ServiceImp implements IService{
         return universiteRepository.findById(idUniversite).orElse(null);
     }
 
+    @Override
+    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) {
+        Universite universite =universiteRepository.findByNomUniversite(nomUniversite);
+        universite.setFoyer(foyerRepository.findById(idFoyer).get());
+        return universiteRepository.save(universite);
+    }
+
+    @Override
+    public Universite desaffecterFoyerAUniversite(long idUniversite) {
+        Universite universite = universiteRepository.findById(idUniversite).get();
+        universite.setFoyer(null);
+        return universiteRepository.save(universite);
+    }
+
 
     //End Universite
 
